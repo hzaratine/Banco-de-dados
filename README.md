@@ -13,7 +13,7 @@ Modelagem de Bando de dados
   
 - Filmes (conceitual e lógico)
 - https://app.brmodeloweb.com/#!/publicview/69d6b554de33eeb5ddb5987b (conceitual)
-- https://app.brmodeloweb.com/#!/publicview/69d6b56ade33eeb5ddb59889 (logico)
+- https://app.brmodeloweb.com/#!/publicview/69d6b7e2de33eeb5ddb59a94 (logico)
 
 - Veterinária (conceitual e lógico)
 - https://app.brmodeloweb.com/#!/publicview/69d69604de33eeb5ddb587e8 (conceitual)
