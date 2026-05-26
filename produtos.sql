@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/05/2026 às 22:56
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 27/05/2026 às 00:54
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,29 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `produtos`
 --
-CREATE DATABASE IF NOT EXISTS `produtos` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `produtos`;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `categoria`
---
-
-CREATE TABLE `categoria` (
-  `idcategoria` int(11) NOT NULL,
-  `categoria` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `categoria`
---
-
-INSERT INTO `categoria` (`idcategoria`, `categoria`) VALUES
-(1, 'Enlatados'),
-(2, 'Laticínios'),
-(3, 'Açougue'),
-(4, 'Limpeza');
 
 -- --------------------------------------------------------
 
@@ -58,28 +35,28 @@ CREATE TABLE `produtos` (
   `data` date NOT NULL,
   `ativo` bit(1) NOT NULL,
   `idcat` int(11) DEFAULT NULL,
-  `observacao` varchar(255) DEFAULT NULL
+  `observacao` varchar(255) DEFAULT NULL,
+  `marca` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `produtos`
 --
 
-INSERT INTO `produtos` (`idproduto`, `produto`, `preco`, `qtd`, `data`, `ativo`, `idcat`, `observacao`) VALUES
-(1, 'Acém peça', 39.99, 50, '2026-05-13', b'1', 3, 'Sem gordura'),
-(2, 'Sabão em pó', 15.99, 30, '2026-05-13', b'1', 4, ''),
-(3, 'Ervilha', 5.56, 10, '2026-05-13', b'0', 1, ''),
-(4, 'Leite', 25.45, 40, '2026-05-13', b'1', 2, '');
+INSERT INTO `produtos` (`idproduto`, `produto`, `preco`, `qtd`, `data`, `ativo`, `idcat`, `observacao`, `marca`) VALUES
+(1, 'Acém peça', 39.99, 50, '2026-05-13', b'1', 3, 'Sem gordura', NULL),
+(2, 'Sabão em pó', 15.99, 30, '2026-05-13', b'1', 4, '', NULL),
+(3, 'Ervilha', 5.56, 10, '2026-05-13', b'0', 1, '', NULL),
+(4, 'Leite', 25.45, 40, '2026-05-13', b'1', 2, '', 'Itambé'),
+(5, 'Refrigerante Cola 2L', 8.99, 60, '2026-05-26', b'1', 1, 'Gelado', 'Coca-Cola'),
+(6, 'Barra de Chocolate', 5.49, 100, '2026-05-26', b'1', 2, 'Ao leite', 'Nestlé'),
+(7, 'Salgadinho de Batata', 9.50, 45, '2026-05-26', b'1', 2, NULL, 'Pringles'),
+(8, 'Café Torrado Tradicional 500g', 18.50, 40, '2026-05-26', b'1', 3, 'Vácuo', 'Pilao'),
+(9, 'Azeite de Oliva Extra Virgem', 34.90, 25, '2026-05-26', b'1', 1, 'Acidez máxima 0.5%', 'Gallo');
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices de tabela `categoria`
---
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`idcategoria`);
 
 --
 -- Índices de tabela `produtos`
@@ -93,16 +70,10 @@ ALTER TABLE `produtos`
 --
 
 --
--- AUTO_INCREMENT de tabela `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas
