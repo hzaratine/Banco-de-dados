@@ -154,3 +154,62 @@ marca, idprodutos)
     -> values ('requeijao',13.99,40,03/12/2026,'saudavel','vigor',1);
 ERROR 1054 (42S22): Unknown column 'prco' in 'field list'
 MariaDB [produtos]>
+MariaDB [produtos]> SELECT * FROM produtos;
++-----------+-------------+-------+-----+------------+-------+-------+-------------+-------+
+| idproduto | produto     | preco | qtd | data       | ativo | idcat | observacao  | marca |
++-----------+-------------+-------+-----+------------+-------+-------+-------------+-------+
+|         1 | Acém peça   | 39.99 |  50 | 2026-05-13 | ☺     |     3 | Sem gordura | NULL  |
+|         2 | Sab╞o em pó | 15.99 |  30 | 2026-05-13 | ☺     |     4 |             | NULL  |
+|         3 | Ervilha     |  5.56 |  10 | 2026-05-13 |       |     1 |             | NULL  |
+|         4 | Leite       | 25.45 |  40 | 2026-05-13 | ☺     |     2 |             | NULL  |
++-----------+-------------+-------+-----+------------+-------+-------+-------------+-------+
+4 rows in set (0.000 sec)
+
+MariaDB [produtos]> INSERT INTO produtos (produto, preco, qtd, data, ativo, idcat, observacao, marca) VALUES ('Refrigerante Cola 2L', 8.99, 60, '2026-05-26', 1, 1, 'Gelado', 'Coca-Cola');
+Query OK, 1 row affected (0.033 sec)
+
+MariaDB [produtos]> INSERT INTO produtos (produto, preco, qtd, data, ativo, idcat, observacao, marca) VALUES ('Barra de Chocolate', 5.49, 100, '2026-05-26', 1, 2, 'Ao leite', 'Nestlé');
+Query OK, 1 row affected (0.022 sec)
+
+MariaDB [produtos]> INSERT INTO produtos (produto, preco, qtd, data, ativo, idcat, observacao, marca) VALUES ('Salgadinho de Batata', 9.50, 45, '2026-05-26', 1, 2, NULL, 'Pringles');
+Query OK, 1 row affected (0.014 sec)
+
+MariaDB [produtos]> INSERT INTO produtos (produto, preco, qtd, data, ativo, idcat, observacao, marca) VALUES ('Café Torrado Tradicional 500g', 18.50, 40, '2026-05-26', 1, 3, 'Vácuo', 'Pilão');
+Query OK, 1 row affected (0.020 sec)
+
+MariaDB [produtos]> INSERT INTO produtos (produto, preco, qtd, data, ativo, idcat, observacao, marca) VALUES ('Azeite de Oliva Extra Virgem', 34.90, 25, '2026-05-26', 1, 1, 'Acidez máxima 0.5%', 'Gallo');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [produtos]> UPDATE produtos SET marca = 'Itambé' WHERE idproduto = 4;[
+Query OK, 1 row affected (0.015 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '[' at line 1
+MariaDB [produtos]> UPDATE produtos SET marca = 'Itambé' WHERE idproduto = 4;
+Query OK, 0 rows affected (0.000 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+MariaDB [produtos]> select from produtos
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'from produtos' at line 1
+MariaDB [produtos]> SELECT * FROM produtos;
++-----------+-------------------------------+-------+-----+------------+-------+-------+--------------------+-----------+
+| idproduto | produto                       | preco | qtd | data       | ativo | idcat | observacao         | marca     |
++-----------+-------------------------------+-------+-----+------------+-------+-------+--------------------+-----------+
+|         1 | Acém peça                     | 39.99 |  50 | 2026-05-13 | ☺     |     3 | Sem gordura        | NULL      |
+|         2 | Sab╞o em pó                   | 15.99 |  30 | 2026-05-13 | ☺     |     4 |                    | NULL      |
+|         3 | Ervilha                       |  5.56 |  10 | 2026-05-13 |       |     1 |                    | NULL      |
+|         4 | Leite                         | 25.45 |  40 | 2026-05-13 | ☺     |     2 |                    | Itambé    |
+|         5 | Refrigerante Cola 2L          |  8.99 |  60 | 2026-05-26 | ☺     |     1 | Gelado             | Coca-Cola |
+|         6 | Barra de Chocolate            |  5.49 | 100 | 2026-05-26 | ☺     |     2 | Ao leite           | Nestlé    |
+|         7 | Salgadinho de Batata          |  9.50 |  45 | 2026-05-26 | ☺     |     2 | NULL               | Pringles  |
+|         8 | Café Torrado Tradicional 500g | 18.50 |  40 | 2026-05-26 | ☺     |     3 | Vácuo              | Pilao     |
+|         9 | Azeite de Oliva Extra Virgem  | 34.90 |  25 | 2026-05-26 | ☺     |     1 | Acidez máxima 0.5% | Gallo     |
++-----------+-------------------------------+-------+-----+------------+-------+-------+--------------------+-----------+
+9 rows in set (0.000 sec)
+
+MariaDB [produtos]>
+
+
+
