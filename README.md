@@ -1,7 +1,15 @@
 # Banco-de-dados
 
 
-Modelagem de Bando de dados
+Modelagem de Bando de dados:
+
+-Restaurante (01/09/2026)
+-https://app.brmodeloweb.com/publicview/6a977c8460b0915e5ff83911 (conceitual)
+-https://app.brmodeloweb.com/publicview/6a977e2560b0915e5ff83a17 (Logico)
+
+-Lava Rapido (01/09/2026)
+-https://app.brmodeloweb.com/publicview/6a977ce860b0915e5ff83958 (conceitual)
+-https://app.brmodeloweb.com/publicview/6a977f1e60b0915e5ff83a64 (logico)
 
 - Imobiliária
 - https://app.brmodeloweb.com/#!/publicview/69d6b67ede33eeb5ddb59968 (conceitual)
